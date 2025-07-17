@@ -24,21 +24,21 @@ package com.viaversion.viafabricplus.features.classic.cpe_extension;
 import com.viaversion.viafabricplus.protocoltranslator.ProtocolTranslator;
 import com.viaversion.viaversion.api.connection.UserConnection;
 import io.netty.buffer.ByteBuf;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.lenni0451.reflect.Enums;
 import net.raphimc.vialegacy.api.LegacyProtocolVersion;
 import net.raphimc.vialegacy.protocol.classic.c0_30cpetoc0_28_30.data.ClassicProtocolExtension;
 import net.raphimc.vialegacy.protocol.classic.c0_30cpetoc0_28_30.packet.ClientboundPacketsc0_30cpe;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.EnumSet;
+import java.util.Set;
 import java.util.function.BiConsumer;
 
 public final class CPEAdditions {
 
-    public final static List<ClassicProtocolExtension> ALLOWED_EXTENSIONS = new ArrayList<>();
-    public final static Map<Integer, ClientboundPacketsc0_30cpe> CUSTOM_PACKETS = new HashMap<>();
+    public final static Set<ClassicProtocolExtension> ALLOWED_EXTENSIONS = EnumSet.noneOf(ClassicProtocolExtension.class);
+    public final static Int2ObjectMap<ClientboundPacketsc0_30cpe> CUSTOM_PACKETS = new Int2ObjectOpenHashMap<>();
 
     public static ClientboundPacketsc0_30cpe EXT_WEATHER_TYPE;
 

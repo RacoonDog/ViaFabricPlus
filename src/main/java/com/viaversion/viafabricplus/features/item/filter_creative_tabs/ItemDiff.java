@@ -27,6 +27,7 @@ import com.viaversion.vialoader.util.VersionRange;
 import com.viaversion.viaversion.api.protocol.version.ProtocolVersion;
 import it.unimi.dsi.fastutil.objects.Reference2ObjectMap;
 import it.unimi.dsi.fastutil.objects.Reference2ObjectOpenHashMap;
+import it.unimi.dsi.fastutil.objects.ReferenceArrayList;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.item.Item;
@@ -34,7 +35,6 @@ import net.minecraft.item.ItemStack;
 import net.raphimc.vialegacy.protocol.classic.c0_30cpetoc0_28_30.data.ClassicProtocolExtension;
 import net.raphimc.vialegacy.protocol.classic.c0_30cpetoc0_28_30.storage.ExtensionProtocolMetadataStorage;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static com.viaversion.vialoader.util.VersionRange.*;
@@ -48,7 +48,7 @@ import static net.raphimc.vialegacy.api.LegacyProtocolVersion.*;
 public final class ItemDiff {
 
     public static final Reference2ObjectMap<Item, VersionRange> ITEM_DIFF = new Reference2ObjectOpenHashMap<>();
-    public static final List<Item> EXTENDED_CLASSIC_ITEMS = new ArrayList<>();
+    public static final List<Item> EXTENDED_CLASSIC_ITEMS = new ReferenceArrayList<>();
 
     static {
         ITEM_DIFF.put(MUSIC_DISC_LAVA_CHICKEN, andNewer(v1_21_7));
